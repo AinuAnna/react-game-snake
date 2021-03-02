@@ -214,7 +214,7 @@ class Game extends Component {
         return (
             <div>
                 <div className="name-game">SNAKE</div>
-                <Music url={''} />
+                <Music url={'https://d7.hotplayer.ru/download/83cd30bc87ac1216b7890e617fb1b8b1/156905203_456240033/11c61541d908c-1af6714942e4-566d8e6e6ff/Hotline%20Miami%202%3A%20Wrong%20Number%20%28Confirmed%20Soundtrack%29%20-%20M.O.O.N.%20-%20Dust.mp3'} />
                 <div className="area">
                     <Snake snakeDots={this.state.snakeDots} />
                     <Food dot={this.state.food} />
