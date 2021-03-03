@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-const useAudio = url => {
+const useAudio = (url) => {
   const [audio] = useState(new Audio(url));
   const [playing, setPlaying] = useState(false);
 
   const toggle = () => setPlaying(!playing);
 
   useEffect(() => {
-      playing ? audio.play() : audio.pause();
-    },
-    [playing]
-  );
+    playing ? audio.play() : audio.pause();
+  }, [playing]);
+
+  useEffect(() => {
+    return () => audio.pause();
+  }, []);
 
   useEffect(() => {
     audio.addEventListener('ended', () => setPlaying(false));
@@ -25,8 +27,10 @@ const useAudio = url => {
 const Music = ({ url }) => {
   const [playing, toggle] = useAudio(url);
   return (
-    <div >
-     <button className = "music" onClick={toggle}>{playing ? "🔈Off" : "🔊On"}</button>
+    <div>
+      <button className="music" onClick={toggle}>
+        {playing ? '🔈Off' : '🔊On'}
+      </button>
     </div>
   );
 };
