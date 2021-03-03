@@ -26,7 +26,7 @@ const Music = ({ url }) => {
   const [playing, toggle] = useAudio(url);
   return (
     <div >
-     <button id = "music" onClick={toggle}>{playing ? "🔈Off" : "🔊On"}</button>
+     <button className = "music" onClick={toggle}>{playing ? "🔈Off" : "🔊On"}</button>
     </div>
   );
 };

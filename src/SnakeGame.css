@@ -78,6 +78,10 @@ color: cadetblue;
     background-position: 0 0;
     color:cadetblue;
 }
+#mainRestart{
+    margin: 0;
+    width: 150px;
+}
 #GameOverText{
 font-size: 80px;
 color: darkred;
@@ -93,11 +97,8 @@ transform: uppercase;
     margin: auto;
     width: 300px;
 }
-#music{
+.music{
     border: none;
-    display:flex;
-    margin: auto;
-    justify-content: center;
     width: 80px;
     text-align: center;
     background-color: rgb(141, 206, 144);
@@ -107,6 +108,16 @@ transform: uppercase;
     color: #043536;
     cursor: pointer;
     outline: 0;
+    margin-left: 200px;
+}
+.music:hover{
+    background-color: #0435363a;
+}
+.container{
+    display:flex;
+    margin: auto;
+    justify-content: center;
+
 }
 .instr{
     background-color: rgba(0, 0, 0, 0.185);
