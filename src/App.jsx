@@ -31,8 +31,8 @@ const getInitialState = () => ({
 class Game extends Component {
   constructor(props) {
     super(props);
-    this.isGameOver = this.isGameOver.bind(this);
-    this.isStartGame = this.isStartGame.bind(this);
+    this.gameOver = this.gameOver.bind(this);
+    this.startGame = this.startGame.bind(this);
     this.restartGame = this.restartGame.bind(this);
     this.stopGame = this.stopGame.bind(this);
   }
@@ -124,7 +124,7 @@ class Game extends Component {
   checkIfOutOfBorders() {
     let head = this.state.snakeDots[this.state.snakeDots.length - 1];
     if (head[0] >= 100 || head[1] >= 100 || head[0] < 0 || head[1] < 0) {
-      this.isGameOver();
+      this.gameOver();
     }
   }
 
@@ -134,7 +134,7 @@ class Game extends Component {
     snake.pop();
     snake.forEach((dot) => {
       if (head[0] == dot[0] && head[1] == dot[1]) {
-        this.isGameOver();
+        this.gameOver();
       }
     });
   }
@@ -173,13 +173,13 @@ class Game extends Component {
       });
     }
   }
-  isStartGame() {
+  startGame() {
     this.setState({
       status: 1,
       isStarted: true,
     });
   }
-  isGameOver() {
+  gameOver() {
     this.setState({
       isEnded: true,
       speed: 0,
@@ -202,7 +202,7 @@ class Game extends Component {
         <div>
           <div className="startgame">
             <div>SNAKE</div>
-            <button className="button" onClick={this.isStartGame}>
+            <button className="button" onClick={this.startGame}>
               Start Game
             </button>
           </div>
